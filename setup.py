@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
@@ -10,7 +10,7 @@ setup(
     author_email='mikko@aino.se',
     license='BSD',
     url='https://github.com/aino/pymail365',
-    packages=find_packages(),
+    packages=['pymail365'],
     zip_safe=False,
     classifiers=[
         'Development Status :: 3 - Alpha',
