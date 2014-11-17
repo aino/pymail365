@@ -66,4 +66,5 @@ class EmailMessage(object):
         headers = {'content-type': 'application/json'}
         auth = (self.user, self.password)
         r = requests.post(SEND_URL, data=data, headers=headers, auth=auth)
-        return r.status_code
+        if r.status_code != 202:
+            raise EmailMessageException('(%s) %s' % (r.status_code, r.text))
